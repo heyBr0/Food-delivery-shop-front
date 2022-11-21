@@ -4,6 +4,7 @@ import { MyContext } from './MyContext'
 const Container = (props) => {
     const [records, setRecords] = useState([])
     const [cart, setCart] = useState([])
+    const [user, setUser] =useState(null)
 
     useEffect(()=>{
         fetch("http://localhost:4000/records")
@@ -15,7 +16,7 @@ const Container = (props) => {
        
     },[])
   return (
-    <MyContext.Provider value={{records, setRecords, cart, setCart}}>
+    <MyContext.Provider value={{records, setRecords, cart, setCart, user, setUser}}>
         {props.children}
     </MyContext.Provider>
   )

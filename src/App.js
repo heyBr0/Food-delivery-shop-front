@@ -4,7 +4,9 @@ import Cart from "./components/Cart";
 import HomePage from "./components/HomePage";
 import Login from "./components/Login";
 import Orders from "./components/Orders";
+import Profile from "./components/Profile";
 import Records from "./components/Records";
+import Signup from "./components/Signup";
 import { MyContext } from "./context/MyContext";
 
 
@@ -27,11 +29,19 @@ function App() {
           </li>
           <li>
             {" "}
+            <Link to="/signup">Signup</Link>{" "}
+          </li>
+          <li>
+            {" "}
             <Link to="/login">Login</Link>{" "}
           </li>
           <li>
             {" "}
             <Link to="/cart">Cart<sup>{cart.length}</sup></Link>{" "}
+          </li>
+          <li>
+            {" "}
+            <Link to="/profile">Profile</Link>{" "}
           </li>
         </ul>
       </div>
@@ -41,8 +51,10 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/records" element={<Records />} />
         <Route path="/orders" element={<Orders />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   );

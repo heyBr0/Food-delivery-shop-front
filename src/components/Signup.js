@@ -1,11 +1,11 @@
-import { useContext } from "react";
-import { MyContext } from "../context/MyContext";
 import { useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
+import "../styles/signup.css"
 
 const Signup = () => {
   /*   const formRef = useRef(); */
   const navigate = useNavigate();
-  const { setUser } = useContext(MyContext);
+
   const registerUser = (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
@@ -19,17 +19,19 @@ const Signup = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.success) {
-          setUser(result.user);
-          navigate("/records");
-        } else{
-            alert(JSON.stringify(result.message))
+          toast.success("You successfully signed up ");
+          setTimeout(() => {
+            navigate("/login");
+          }, 2500);
+        } else {
+          toast.error(JSON.stringify(result.message));
         }
         console.log(result);
       });
   };
   return (
-    <div>
-      <h1>Sign up new user</h1>
+    <div className="signupContainer">
+     <h1>Sign up new user</h1> 
       <form
         encType="multipart/form-data"
         onSubmit={registerUser} /* ref={formRef} */
@@ -56,6 +58,7 @@ const Signup = () => {
         <br />
         <button>Sign up</button>
       </form>
+      <Toaster position="bottom-center" />
     </div>
   );
 };

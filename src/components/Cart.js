@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { MyContext } from "../context/MyContext";
+import "../styles/cart.css"
 
 const Cart = () => {
   const { cart, setCart } = useContext(MyContext);
@@ -24,8 +25,12 @@ const Cart = () => {
 
   return (
     <>
-      <h1>My Cart</h1>
-      <div>
+      <div className="cartContainer">
+       <h1>My Cart</h1>
+       <h2>
+        Total:{" "}
+        {cart.reduce((acc, item) => (acc += item.price * item.quantity), 0)} €
+      </h2>
         {cart.map((record) => {
           return (
             <div key={record._id}>
@@ -49,10 +54,7 @@ const Cart = () => {
           );
         })}
       </div>
-      <h1>
-        Total:{" "}
-        {cart.reduce((acc, item) => (acc += item.price * item.quantity), 0)} €
-      </h1>
+    
     </>
   );
 };

@@ -1,7 +1,10 @@
+import "../styles/orders.css"
 
 const Orders = () => {
   return (
-    <div>Orders</div>
+    <div className="ordersContainer">
+      <h1>Orders</h1>
+    </div>
   )
 }
 

@@ -1,0 +1,13 @@
+.profileContainer{
+    background-color: #34B183;
+    margin: 0;
+    padding: 0;
+    height: 92vh;
+}
+h1{
+    padding-bottom: 3rem;
+}
+
+button{
+    margin: 1rem;
+}

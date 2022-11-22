@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { MyContext } from "../context/MyContext";
+import "../styles/shop.css"
 
 const Records = () => {
   const { records, cart, setCart } = useContext(MyContext);
@@ -16,9 +17,8 @@ const Records = () => {
 
   return (
     <>
-      <h1>Records</h1>
-
-      <div>
+      <div className="recordsContainer">
+        <h1>Shop</h1>
         {records.map((record) => {
           return (
             <div key={record._id}>

@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  width: 100%;
+}
+
+.outer {
+  display: flex;
+  /*   flex-wrap: wrap; */
+  height: 8vh;
+  overflow: hidden;
+}
+
+.panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  width: 20%;
+  transition: all 0.5s ease;
+}
+.panel p {
+  transform: rotate(90deg);
+  transform-origin: 0;
+  transition: all 1s ease;
+}
+
+.home {
+  background: #fdf5bf;
+  z-index: 100;
+}
+.home div {
+  margin-bottom: 3rem;
+  z-index: 25;
+  font-size: 3rem;
+  padding-bottom: 1rem;
+}
+.home aside {
+  font-size: 2rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.records {
+  background: #ffd5ff;
+  z-index: 90;
+}
+.records div {
+  margin-bottom: 3rem;
+  z-index: 90;
+}
+.records aside {
+  font-size: 2rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.orders {
+  background: #e83f6f;
+  z-index: 80;
+}
+
+.orders div {
+  margin-bottom: 3rem;
+  z-index: 25;
+}
+.orders aside {
+  font-size: 2rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.profile {
+  background: #34B183;
+  z-index: 70;
+}
+.profile div {
+  margin-bottom: 3rem;
+  z-index: 25;
+}
+.profile aside {
+  font-size: 2rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.signup {
+  background: #92d1c3;
+  z-index: 80;
+}
+
+.signup div {
+  margin-bottom: 3rem;
+  z-index: 25;
+}
+.signup aside {
+  font-size: 2rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.login {
+  background: #f15025;
+  z-index: 70;
+}
+.login div {
+  margin-bottom: 3rem;
+  z-index: 25;
+}
+.login aside {
+  font-size: 2rem;
+  padding: 2rem;
+  text-align: center;
+}
+.cart {
+  background: #7776bc;
+  z-index: 60;
+}
+.cart div {
+  margin-bottom: 3rem;
+  z-index: 25;
+}
+.cart aside {
+  font-size: 2rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.active {
+  width: 88%;
+}
+.active p {
+  transform: rotate(0);
+}
+.navbar {
+  padding-left: 3rem;
+}

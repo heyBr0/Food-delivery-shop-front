@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { useContext } from "react";
 import { MyContext } from "../context/MyContext";
-import "../styles/login.css"
+import "../styles/login.css" 
 
 const Login = () => {
   const navigate = useNavigate();
@@ -36,11 +36,12 @@ const Login = () => {
 
   return (
     <div className="loginContainer">
-       <h1>Please log in:</h1> 
+   
       <form
         encType="multipart/form-data"
         onSubmit={loginUser} 
       >
+            <h1>Please log in:</h1> 
         <label>
           Email: <input type="email" name="email" required></input>
         </label>

@@ -10,6 +10,7 @@ import Signup from "./components/Signup";
 import { MyContext } from "./context/MyContext";
 import "./styles/app.css";
 import $ from "jquery";
+import EditProfileUser from "./components/EditProfileUser";
 
 function App() {
   const { cart, user } = useContext(MyContext);
@@ -33,7 +34,7 @@ function App() {
         <div className="home panel">
           <div>
             <aside>
-              <Link to="/">Home</Link>
+              <Link to="/" style={{ textDecoration: 'none', color:"black",borderLeft:"3px solid black", padding: "0.5rem"  }}>Home</Link>
             </aside>
             <Homepage />
           </div>
@@ -42,7 +43,7 @@ function App() {
         <div className="records panel">
           <div>
             <aside>
-              <Link to="/records">Shop</Link>
+              <Link to="/records" style={{ textDecoration: 'none', color:"black", borderLeft:"1px solid black", borderRight:"1px solid black", padding: "0.5rem" }}>Shop</Link>
             </aside>
             <Records />
           </div>
@@ -52,7 +53,7 @@ function App() {
             <div className="orders panel">
               <div>
                 <aside>
-                  <Link to="/orders">Orders</Link>
+                  <Link to="/orders" style={{ textDecoration: 'none', color:"white",borderLeft:"1px solid black", borderRight:"1px solid black", padding: "0.5rem"  }}>Orders</Link>
                 </aside>
                 <Orders />
               </div>
@@ -60,7 +61,7 @@ function App() {
             <div className="profile panel">
               <div>
                 <aside>
-                  <Link to="/profile">Profile</Link>
+                  <Link to="/profile" style={{ textDecoration: 'none',color:"white",borderLeft:"1px solid black", borderRight:"1px solid black",padding: "0.5rem"  }}>Profile</Link>
                 </aside>
                 <Profile />
               </div>
@@ -71,7 +72,7 @@ function App() {
             <div className="signup panel">
               <div>
                 <aside>
-                  <Link to="/signup">Signup</Link>
+                  <Link to="/signup" style={{ textDecoration: 'none',color:"white",borderLeft:"1px solid black", borderRight:"1px solid black", padding: "0.5rem"  }}>Signup</Link>
                 </aside>
                 <Signup />
               </div>
@@ -79,7 +80,7 @@ function App() {
             <div className="login panel">
               <div>
                 <aside>
-                  <Link to="/login">Login</Link>
+                  <Link to="/login" style={{ textDecoration: 'none', color:"white",borderLeft:"1px solid black", borderRight:"1px solid black", padding: "0.5rem"  }}>Login</Link>
                 </aside>
                 <Login />
               </div>
@@ -89,7 +90,7 @@ function App() {
         <div className="cart panel">
           <div>
             <aside>
-              <Link to="/cart">
+              <Link to="/cart" style={{ textDecoration: 'none', color:"white",borderRight:"3px solid black", padding: "0.5rem"  }}>
                 Cart<sup>{cart.length}</sup>
               </Link>
             </aside>
@@ -108,6 +109,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/editprofileuser" element={<EditProfileUser />} />
       </Routes>
     </div>
   );

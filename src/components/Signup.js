@@ -1,15 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
-import "../styles/signup.css"
+ import "../styles/signup.css"; 
 
 const Signup = () => {
-  /*   const formRef = useRef(); */
   const navigate = useNavigate();
 
   const registerUser = (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
-    // send data to backend
+
 
     fetch("http://localhost:4000/users", {
       method: "POST",
@@ -26,16 +25,16 @@ const Signup = () => {
         } else {
           toast.error(JSON.stringify(result.message));
         }
-        console.log(result);
       });
   };
   return (
     <div className="signupContainer">
-     <h1>Sign up new user</h1> 
+   
       <form
         encType="multipart/form-data"
-        onSubmit={registerUser} /* ref={formRef} */
+        onSubmit={registerUser} 
       >
+           <h1>Sign up </h1>
         <label>
           First name: <input type="text" name="firstName" required></input>
         </label>
@@ -52,8 +51,8 @@ const Signup = () => {
           Password: <input type="password" name="password" required></input>
         </label>
         <br />
-        <label>
-          Profile Image: <input type="file" name="image"></input>
+        <label >
+          Profile Image: <input type="file" name="image" id="uploadFile"></input>
         </label>
         <br />
         <button>Sign up</button>

@@ -1,20 +1,18 @@
-.profileContainer{
+.editProfileContainer{
     background-color: #34B183;
     margin: 0;
-    padding-top: 5rem;
+    
     height: 92vh;
+    display: flex;
+  justify-content:center;
+  align-items: center;
 }
 h1{
     padding-bottom: 3rem;
 }
 
-.profileContainer button{
-    margin: 1rem;
-    width: 10%;
+.editProfileContainer button{
     background-color: aliceblue;
     color: black;
 }
 
-#deleteUser{
-    color: red;
-}

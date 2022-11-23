@@ -1,9 +1,65 @@
 .cartContainer{
     background-color: #7776bc;
     margin: 0;
-    padding: 0;
-    height: 92vh;
+    padding-top: 5rem;
+    min-height: 92vh;
+
 }
+
 h1{
     padding-bottom: 3rem;
 }
+
+.recordsContainer button{
+    width: 50%;
+}
+
+#cartGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+   
+}
+
+/*  .shopItemsCart{
+ 
+   background-color: white;
+   width: 400px;
+   height: auto;
+   margin: 2rem;
+   padding: 2rem;
+}  */
+
+/* ///////////////// */
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s; 
+    border-radius: 5px;
+    background-color: white;
+    width: 400px;
+    height: auto;
+    margin: 2rem;
+    padding: 2rem;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  img {
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .container {
+    padding: 2px 16px;
+  }
+  
+  .inline{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  align-items: baseline;
+  }
+
+  .card h3{
+    padding-top: 1rem;
+  }

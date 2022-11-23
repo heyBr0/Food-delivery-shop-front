@@ -1,7 +1,7 @@
 .homeContainer{
-    background-color: #fdf5bf;
+    background-color: white;
     margin: 0;
-    padding: 0;
+    padding-top: 5rem;
     height: 92vh;
 }
 h1{

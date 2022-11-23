@@ -18,17 +18,21 @@ const Records = () => {
   return (
     <>
       <div className="recordsContainer">
-        <h1>Shop</h1>
-        {records.map((record) => {
+          {records.map((record) => {
           return (
-            <div key={record._id}>
+            <div key={record._id} className="card">
+              <>
+              <img src={record.img} alt="" width="300" />
+              <div className="container">
               <h2>{record.title}</h2>
-              <img src={record.img} alt="" width="200" />
-              <h3>{record.author}</h3>
-              <p>{record.price} €</p>
+              <h3>{record.price} €</h3>
+
+              </div>
+             
               <button onClick={() => addItemIntoCart(record)}>
                 Add to cart
               </button>
+              </>             
             </div>
           );
         })}

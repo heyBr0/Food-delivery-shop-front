@@ -9,6 +9,7 @@ const Container = (props) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
+    //onload effect
     fetch("http://localhost:4000/records")
       .then((res) => res.json())
       .then((result) => {

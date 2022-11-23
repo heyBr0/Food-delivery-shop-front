@@ -1,9 +1,53 @@
-.recordsContainer{
-    background-color: #ffd5ff;
-    margin: 0;
-    padding: 0;
+.recordsContainer {
+  background-color: #e0efda;
+  margin: 0;
+  padding-top: 5rem;
+  /* height: 92vh; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-h1{
-    padding-bottom: 3rem;
+h1 {
+  padding-bottom: 3rem;
 }
+
+.recordsContainer button {
+  width: 50%;
+}
+
+/* .shopItems {
+  background-color: white;
+  width: 400px;
+  height: auto;
+  margin: 2rem;
+  padding: 2rem;
+} */
+
+/* ///////////////// */
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s; 
+  border-radius: 5px;
+  background-color: white;
+  width: 400px;
+  height: auto;
+  margin: 2rem;
+  padding: 2rem;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+img {
+  border-radius: 5px 5px 0 0;
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.card h3{
+    padding-top: 1rem;
+  }

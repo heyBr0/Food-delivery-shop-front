@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { useContext } from "react";
 import { MyContext } from "../context/MyContext";
-import "../styles/login.css" 
+ import "../styles/login.css"  
 
 const Login = () => {
   const navigate = useNavigate();

@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { MyContext } from "../context/MyContext";
 import { useNavigate } from "react-router-dom";
-import "../styles/profile.css";
+import toast from "react-hot-toast";
+ import "../styles/profile.css"; 
 
 export default function Profile() {
   const { user, setUser } = useContext(MyContext);
@@ -17,6 +18,21 @@ export default function Profile() {
     navigate("/editprofileuser");
   };
 
+  const deleteOrder = (id)=>{
+    fetch(`http://localhost:4000/orders/${id}`, 
+    {
+      method: "DELETE",
+      headers:{token: localStorage.getItem("token")}
+    })
+    .then(res=>res.json())
+    .then(result=>{
+      if(result.success){
+        setUser(result.data)
+        toast.success("Order deleted")
+      }
+    })
+  }
+
   return (
     <div className="profileContainer">
       <h1>Welcome to your Profile</h1>
@@ -30,14 +46,15 @@ export default function Profile() {
             <button onClick={logout}>Logout</button>
             <button id="deleteUser">Delete User</button>
           </div>
-          <h2>User Orders </h2>
+          <h2>User Orders ({user.orders.length})</h2>
           <ul>
             {user.orders.map((order) => {
               return (
-                <div key={order._id}>
-                  <h3>{order._id}</h3>
-                  <button>Delete order</button>
-                </div>
+                <ul key={order._id}>
+                  <h3>Invoice Nr.:{order._id}</h3>
+                  <h4>Total price: {order.totalPrice} €</h4>           
+                  <button onClick={()=>deleteOrder(order._id)}>Delete order</button>
+                </ul>
               );
             })}
           </ul>

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import toast, {Toaster} from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { MyContext } from "../context/MyContext";
-import "../styles/editProfile.css";
+import "../styles/editProfile.css"; 
 
 const EditProfileUser = () => {
   const { user, setUser } = useContext(MyContext);

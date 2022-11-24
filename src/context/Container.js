@@ -7,10 +7,10 @@ const Container = (props) => {
   const [records, setRecords] = useState([]);
   const [cart, setCart] = useState([]);
   const [user, setUser] = useState(null);
-
+console.log(records);
   useEffect(() => {
     //onload effect
-    fetch("http://localhost:4000/records")
+    fetch("http://localhost:4000/records?page=1&start=0&end=5")
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
@@ -26,6 +26,7 @@ const Container = (props) => {
         .then((res) => res.json())
         .then((result) => {
           if (result.success) {
+            console.log(result);
             setUser(result.data);
           } else {
             navigate("/login");

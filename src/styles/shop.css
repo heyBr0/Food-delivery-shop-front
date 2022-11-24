@@ -2,9 +2,19 @@
   background-color: #e0efda;
   margin: 0;
   padding-top: 5rem;
-  /* height: 92vh; */
+/*   min-height: 92vh;   */ 
+ 
+}
+
+.itemSection{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#searchBar,
+#labelSearch{
+  width: 20%;
+  margin: 0 1rem;
 }
 
 h1 {

@@ -2,7 +2,7 @@
     background-color: #34B183;
     margin: 0;
     
-    height: 92vh;
+    min-height: 92vh;
     display: flex;
   justify-content:center;
   align-items: center;

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
- import "../styles/signup.css"; 
+ import "../styles/signup.css";  
 
 const Signup = () => {
   const navigate = useNavigate();

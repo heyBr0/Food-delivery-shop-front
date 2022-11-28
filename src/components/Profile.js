@@ -19,7 +19,7 @@ export default function Profile() {
   };
 
   const deleteOrder = (id)=>{
-    fetch(`http://localhost:4000/orders/${id}`, 
+    fetch(`/orders/${id}`, 
     {
       method: "DELETE",
       headers:{token: localStorage.getItem("token")}

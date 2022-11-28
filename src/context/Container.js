@@ -10,7 +10,7 @@ const Container = (props) => {
 console.log(records);
   useEffect(() => {
     //onload effect
-    fetch("http://localhost:4000/records?page=1&start=0&end=5")
+    fetch("/records?page=1&start=0&end=5")
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
@@ -19,7 +19,7 @@ console.log(records);
 
     const token = localStorage.getItem("token");
     if (token) {
-      fetch("http://localhost:4000/users/checkusertoken", {
+      fetch("/users/checkusertoken", {
         method: "GET",
         headers: { token: token },
       })

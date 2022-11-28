@@ -11,7 +11,7 @@ const EditProfileUser = () => {
   const sendUpdateRequest = (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
-    fetch(`http://localhost:4000/users/${user._id}`, {
+    fetch(`/users/${user._id}`, {
       method: "PATCH",
       headers: { token: localStorage.getItem("token") },
       body: data,

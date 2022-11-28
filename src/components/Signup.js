@@ -10,7 +10,7 @@ const Signup = () => {
     const data = new FormData(e.target);
 
 
-    fetch("http://localhost:4000/users", {
+    fetch("/users", {
       method: "POST",
       /*  headers: { "Content-Type": "application/json" }, */
       body: data,

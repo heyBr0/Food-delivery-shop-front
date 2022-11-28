@@ -34,7 +34,7 @@ const Cart = () => {
     if (!user) {
       navigate("/login");
     } else if (cart.length > 0) {
-      fetch("http://localhost:4000/orders", {
+      fetch("/orders", {
         method: "POST",
         headers: {
           token: localStorage.getItem("token"),

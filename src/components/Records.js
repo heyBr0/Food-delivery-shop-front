@@ -20,6 +20,7 @@ const Records = () => {
     }
   };
 
+// INTERSECTION OBSERVER
   useEffect(() => {
     const loadingRecords = new IntersectionObserver(
       (entry) => {
@@ -27,7 +28,7 @@ const Records = () => {
           console.log(item);
           if (item.isIntersecting) {
             fetch(
-              `http://localhost:4000/records?page=1&start=${start}&end=${end}`
+              `/records?page=1&start=${start}&end=${end}`
             )
               .then((res) => res.json())
               .then((result) => {
@@ -45,8 +46,9 @@ const Records = () => {
     );
     loadingRecords.observe(lastItem.current);
     return loadingRecords.unobserve(lastItem.current);
-  }, []);
+  }, [end, setRecords, start]);
 
+  // SEARCH
   const filteredData = records.filter((record) => {
     if (
       record.title.slice(0, searchValue.length).toLowerCase() ===
@@ -92,7 +94,7 @@ const Records = () => {
           })}
         </section>
 
-        <span ref={lastItem}>OK</span>
+        <span ref={lastItem}>----NEW ITEMS HERE: ----</span>
       </div>
     </>
   );

@@ -10,7 +10,7 @@ const Login = () => {
 
   const loginUser = (e) => {
     e.preventDefault()
-    fetch("http://localhost:4000/users/login", 
+    fetch("/users/login", 
     {method : "POST", 
     headers:{"Content-Type":"application/json"},
     body: JSON.stringify({email: e.target.email.value, password: e.target.password.value})})

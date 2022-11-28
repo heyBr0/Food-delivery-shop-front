@@ -1,9 +1,30 @@
-.ordersContainer{
-    background-color: #e83f6f;
-    margin: 0;
-    padding-top: 5rem;
-    min-height: 92vh;
+.ordersContainer {
+  /* background-color: #e83f6f; */
+  border: 2rem solid #e83f6f;
+  margin: 0;
+  padding-top: 5rem;
+  min-height: 92vh;
 }
-h1{
-    padding-bottom: 3rem;
+
+#h1Orders {
+  display: grid;
+  justify-content: center;
+}
+
+.ordersContainer h1 {
+  margin-bottom: 3rem;
+  background-color: #e83f6f;
+  padding: 1.5rem;
+}
+
+.ordersContainer ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+}
+
+#ordersItems {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
 }

@@ -3,12 +3,10 @@ import { MyContext } from "../context/MyContext";
 import "../styles/shop.css";
 
 const Records = () => {
-  const { records, cart, setCart, setRecords } = useContext(MyContext);
+  const { records, cart, setCart, setPage, page } =
+    useContext(MyContext);
   const [searchValue, setSearchValue] = useState("");
-  const [start, setStart] = useState(5);
-  const [end, setEnd] = useState(10);
   const lastItem = useRef();
-  const containerRef = useRef();
 
   const addItemIntoCart = (record) => {
     const foundItem = cart.find((item) => item._id === record._id);
@@ -20,33 +18,20 @@ const Records = () => {
     }
   };
 
-// INTERSECTION OBSERVER
+  // INTERSECTION OBSERVER
   useEffect(() => {
-    const loadingRecords = new IntersectionObserver(
+    /*     console.log(start, end); */
+    const IB = new IntersectionObserver(
       (entry) => {
-        entry.forEach((item) => {
-          console.log(item);
-          if (item.isIntersecting) {
-            fetch(
-              `/records?page=1&start=${start}&end=${end}`
-            )
-              .then((res) => res.json())
-              .then((result) => {
-                console.log(result);
-                setRecords((records) => {
-                  return [...records, ...result];
-                });
-                setStart(end);
-                setEnd(end + 5);
-              });
-          }
-        });
+        console.log(entry[0].isIntersecting);
+        if (entry[0].isIntersecting) {
+          setPage((page) => page + 1);
+        }
       },
-      { root: containerRef.current, rootMargin: "100px", threshold: "1.0" }
+      { rootMargin: "50px" }
     );
-    loadingRecords.observe(lastItem.current);
-    return loadingRecords.unobserve(lastItem.current);
-  }, [end, setRecords, start]);
+    lastItem.current && IB.observe(lastItem.current);
+  }, [setPage]);
 
   // SEARCH
   const filteredData = records.filter((record) => {
@@ -64,9 +49,9 @@ const Records = () => {
 
   return (
     <>
-      <div className="recordsContainer" ref={containerRef}>
+      <div className="recordsContainer">
         <label id="labelSearch">
-          Search:
+          <span id="spanSearch">Search:</span>
           <input
             id="searchBar"
             type="text"
@@ -74,6 +59,7 @@ const Records = () => {
             placeholder="What are you looking for?"
           />
         </label>
+
         <section className="itemSection">
           {filteredData.map((record) => {
             return (
@@ -92,9 +78,8 @@ const Records = () => {
               </div>
             );
           })}
+          <span id="spanPages" ref={lastItem}>Pages fetched: {page}</span>
         </section>
-
-        <span ref={lastItem}>----NEW ITEMS HERE: ----</span>
       </div>
     </>
   );

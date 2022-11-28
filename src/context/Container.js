@@ -7,16 +7,20 @@ const Container = (props) => {
   const [records, setRecords] = useState([]);
   const [cart, setCart] = useState([]);
   const [user, setUser] = useState(null);
-console.log(records);
+  const [page, setPage] = useState(0)
+console.log(page);
+
+useEffect(()=>{
+  fetch(`/records?page=${page}`)
+  .then((res) => res.json())
+  .then((result) => {
+    console.log(result);
+    setRecords([...records, ...result.data]);
+  });
+}, [page])
+
   useEffect(() => {
     //onload effect
-    fetch("/records?page=1&start=0&end=5")
-      .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
-        setRecords(result);
-      });
-
     const token = localStorage.getItem("token");
     if (token) {
       fetch("/users/checkusertoken", {
@@ -33,10 +37,10 @@ console.log(records);
           }
         });
     }
-  }, []);
+  }, [navigate]);
   return (
     <MyContext.Provider
-      value={{ records, setRecords, cart, setCart, user, setUser }}
+      value={{ records, setRecords, cart, setCart, user, setUser, page, setPage }}
     >
       {props.children}
     </MyContext.Provider>

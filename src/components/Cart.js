@@ -66,7 +66,10 @@ const Cart = () => {
   return (
     <>
       <div className="cartContainer">
+        <div id="h1Cart">
         <h1>My Cart</h1>
+
+        </div>
         <h2>
           Total:
           {totalPrice} €

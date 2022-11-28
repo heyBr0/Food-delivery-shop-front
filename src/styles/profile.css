@@ -1,20 +1,29 @@
-.profileContainer{
-    background-color: #34B183;
-    margin: 0;
-    padding-top: 5rem;
-    min-height: 92vh;
-}
-h1{
-    padding-bottom: 3rem;
+.profileContainer {
+  /* background-color: #34B183; */
+  border: 2rem solid #34b183;
+  margin: 0;
+  padding-top: 5rem;
+  min-height: 92vh;
 }
 
-.profileContainer button{
-    margin: 1rem;
-    width: 10%;
-    background-color: aliceblue;
-    color: black;
+#h1Profile {
+  display: grid;
+  justify-content: center;
 }
 
-#deleteUser{
-    color: red;
+.profileContainer h1 {
+  margin-bottom: 3rem;
+  background-color: #34b183;
+  padding: 1.5rem;
+}
+
+.profileContainer button {
+  margin: 1rem;
+  width: 10%;
+  background-color: aliceblue;
+  color: black;
+}
+
+#deleteUser {
+  color: red;
 }

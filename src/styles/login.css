@@ -1,11 +1,21 @@
-.loginContainer{
-    background-color: #f5b700;
-    margin: 0;
-    min-height: 92vh;
-    display: flex;
-    justify-content:center;
-    align-items: center;
+.loginContainer {
+  /*   background-color: #f5b700; */
+  border: 2rem solid #f5b700;
+  margin: 0;
+  min-height: 92vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-h1{
-    padding-bottom: 3rem;
+
+.loginContainer h1 {
+  margin-bottom: 3rem;
+  background-color: #f5b700;
+}
+
+.loginContainer form {
+  text-align: center;
+  width: 30%;
+  border: 2px solid #f5b700;
+  padding: 2rem;
 }

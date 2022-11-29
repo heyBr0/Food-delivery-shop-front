@@ -132,6 +132,24 @@ body {
   text-align: center;
 }
 
+.admin {
+  background: gray;
+  z-index: 70;
+}
+.admin div {
+  margin-bottom: 3rem;
+  z-index: 25;
+}
+.admin aside {
+  font-size: 2rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+
+
+
+
 .active {
   width: 35%;
 }

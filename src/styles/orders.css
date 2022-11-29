@@ -19,12 +19,17 @@
 
 .ordersContainer ul {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
 }
 
-#ordersItems {
+/* #ordersItems {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
-}
+} */
+
+/* #ordersGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+} */

@@ -57,36 +57,46 @@ export default function Profile() {
   return (
     <div className="profileContainer">
       <div id="h1Profile">
-      <h1>Welcome to your Profile</h1>
+        <h1>Welcome to your Profile</h1>
       </div>
-      {user && (
-        <>
-          <h2>{user.fullName}</h2>
-          <p>{user.email}</p>
-          <img src={user.profileImage} width="300" alt="profileImage" />
-          <div>
-            <button onClick={editProfile}>Update Profile</button>
-            <button onClick={logout}>Logout</button>
-            <button onClick={()=>deleteUser(user._id)} id="deleteUser">
-              Delete User
-            </button>
-          </div>
-          <h2>User Orders ({user.orders.length})</h2>
-          <ul>
-            {user.orders.map((order) => {
-              return (
-                <ul key={order._id}>
-                  <h3>Invoice Nr.:{order._id}</h3>
-                  <h4>Total price: {order.totalPrice} €</h4>
-                  <button onClick={() => deleteOrder(order._id)}>
-                    Delete order
-                  </button>
-                </ul>
-              );
-            })}
-          </ul>
-        </>
-      )}
+      <section>
+        {user && (
+          <>
+            <div>
+              <h2>{user.fullName}</h2>
+              <p>{user.email}</p>
+              <p>User type: {user.role}</p>
+              <img src={user.profileImage} width="300" alt="profileImage" />
+              <div>
+                <button onClick={editProfile}>Update Profile</button>
+                <button onClick={logout}>Logout</button>
+                <button onClick={() => deleteUser(user._id)} id="deleteUser">
+                  Delete User
+                </button>
+              </div>
+              {user && user.role === "user" && (
+                <h2>User Orders ({user.orders.length})</h2>
+              )}
+            </div>
+
+            <div>
+              <ul>
+                {user.orders.map((order) => {
+                  return (
+                    <ul key={order._id}>
+                      <h3>Invoice Nr.:{order._id}</h3>
+                      <h4>Total price: {order.totalPrice} €</h4>
+                      <button onClick={() => deleteOrder(order._id)}>
+                        Delete order
+                      </button>
+                    </ul>
+                  );
+                })}
+              </ul>
+            </div>
+          </>
+        )}
+      </section>
     </div>
   );
 }

@@ -1,10 +1,10 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { MyContext } from "../context/MyContext";
 import "../styles/shop.css";
+import toast, { Toaster } from "react-hot-toast";
 
 const Records = () => {
-  const { records, cart, setCart, setPage, page } =
-    useContext(MyContext);
+  const { records, cart, setCart, setPage, page, user, setRecords } = useContext(MyContext);
   const [searchValue, setSearchValue] = useState("");
   const lastItem = useRef();
 
@@ -47,6 +47,24 @@ const Records = () => {
     }
   });
 
+  // ADMIN DELETE ITEM
+  const adminDeleteItem = (id) => {
+    if (id) {
+      fetch(`/records/${id}`, {
+        method: "DELETE",
+        headers: { token: localStorage.getItem("token") },
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          if (result.success) {
+            const newRecords = records.filter((item) => item._id !== id);
+            setRecords(newRecords)
+            toast.success("Item deleted");
+          }
+        });
+    }
+  };
+
   return (
     <>
       <div className="recordsContainer">
@@ -65,7 +83,7 @@ const Records = () => {
             return (
               <div key={record._id} className="card">
                 <>
-                  <img src={record.img} alt="" width="300" />
+                  <img src={record.img} alt="recordImage" width="300" />
                   <div className="container">
                     <h2>{record.title}</h2>
                     <h3>{record.price} €</h3>
@@ -74,12 +92,20 @@ const Records = () => {
                   <button onClick={() => addItemIntoCart(record)}>
                     Add to cart
                   </button>
+                  {user && user.role === "admin" && (
+                    <button onClick={() => adminDeleteItem(record._id)}>
+                      Delete item
+                    </button>
+                  )}
                 </>
               </div>
             );
           })}
-          <span id="spanPages" ref={lastItem}>Pages fetched: {page}</span>
+          <span id="spanPages" ref={lastItem}>
+            Pages fetched: {page}
+          </span>
         </section>
+        <Toaster position="bottom-center" />
       </div>
     </>
   );

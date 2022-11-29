@@ -1,0 +1,40 @@
+#adminPanel {
+  border: 2rem solid gray;
+  margin: 0;
+  padding-top: 5rem;
+  min-height: 92vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+#h1Admin {
+  display: grid;
+  justify-content: center;
+}
+
+#adminPanel h1 {
+  background-color: gray;
+  padding: 1.5rem;
+  color: white;
+}
+
+form {
+  width: 100%;
+}
+
+#adminPanel form {
+  text-align: center;
+  width: 100%;
+  border: 2px solid gray;
+  padding: 2rem;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}

@@ -28,7 +28,8 @@ const Login = () => {
           navigate("/profile");
         }, 2000);
       } else {
-        toast.error(JSON.stringify(result.message));
+        toast.error("Something is wrong, please try again");
+       /*  toast.error(JSON.stringify(result.message)); */
       }
       console.log(result.data);
     })

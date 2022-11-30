@@ -4,7 +4,8 @@ import "../styles/shop.css";
 import toast, { Toaster } from "react-hot-toast";
 
 const Records = () => {
-  const { records, cart, setCart, setPage, page, user, setRecords } = useContext(MyContext);
+  const { records, cart, setCart, setPage, page, user, setRecords } =
+    useContext(MyContext);
   const [searchValue, setSearchValue] = useState("");
   const lastItem = useRef();
 
@@ -58,7 +59,7 @@ const Records = () => {
         .then((result) => {
           if (result.success) {
             const newRecords = records.filter((item) => item._id !== id);
-            setRecords(newRecords)
+            setRecords(newRecords);
             toast.success("Item deleted");
           }
         });
@@ -70,6 +71,7 @@ const Records = () => {
       <div className="recordsContainer">
         <label id="labelSearch">
           <span id="spanSearch">Search:</span>
+
           <input
             id="searchBar"
             type="text"
@@ -81,7 +83,7 @@ const Records = () => {
         <section className="itemSection">
           {filteredData.map((record) => {
             return (
-              <div key={record._id} className="card">
+              <div key={record._id} className="shopCard">
                 <>
                   <img src={record.img} alt="recordImage" width="300" />
                   <div className="container">

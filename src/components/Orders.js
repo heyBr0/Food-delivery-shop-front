@@ -13,19 +13,19 @@ const Orders = () => {
       </div>
       <img src={DeliveryGif} alt="delivery" width="64px" />
 
-      <ul>
+      <ul id="allOrders">
         {user &&
           user.orders.map((order) => {
             return (
-              <ul key={order._id} style={{ border: "1px solid black" }}>
+              <ul id="ordersArticle" key={order._id} /* style={{ outline: "1px solid black" }} */>
                 <h3>Invoice Nr.:{order._id}</h3>
                 <h4>Total price: {order.totalPrice} €</h4>
                 <div id="ordersItems">
                   {order.records.map((item) => {
                     return (
-                      <div key={item._id}>
+                      <div key={item._id} id="orderImages2">
                         <h3>{item.title}</h3>
-                        <img src={item.img} alt="itemImage" width="100"></img>
+                        <img src={item.img} alt="itemImage" width="150"></img>
                       </div>
                     );
                   })}{" "}

@@ -19,10 +19,6 @@
   color: white;
 }
 
-form {
-  width: 100%;
-}
-
 #adminPanel form {
   text-align: center;
   width: 100%;
@@ -37,4 +33,22 @@ input[type="number"] {
   display: inline-block;
   border: none;
   background: #f1f1f1;
+}
+
+
+@media (max-width: 768px){
+  #adminPanel form {
+    text-align: center;
+    border: 1px solid white;
+    padding: 2rem;
+  }
+  #adminPanel h1 {
+    background-color: gray;
+    padding: 1.5rem;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  #adminPanel{
+    font-size: 1rem;
+  }
 }

@@ -21,7 +21,7 @@ body {
   flex-direction: column;
   min-height: 100%;
   width: 20%;
-  max-width: 30%;
+  max-width: 25%;
   transition: all 0.5s ease;
 }
 .panel p {
@@ -58,7 +58,6 @@ body {
   font-size: 2rem;
   padding: 1rem;
   text-align: center;
-
 }
 
 .orders {
@@ -77,7 +76,7 @@ body {
 }
 
 .profile {
-  background: #34B183;
+  background: #34b183;
   z-index: 70;
 }
 .profile div {
@@ -146,16 +145,83 @@ body {
   text-align: center;
 }
 
-
-
-
-
 .active {
-  width: 35%;
+  width: 22.5%;
 }
 .active p {
   transform: rotate(0);
 }
 .navbar {
   padding-left: 3rem;
+}
+
+@media (max-width: 768px) {
+/*   .App {
+    font-size: 1rem;
+  }
+  aside {
+    z-index: 1;
+    height: 60vh;
+    text-align: center;
+  }
+
+  .outer {
+    font-size: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 60vh;
+    z-index: 1;
+  }
+
+  .panel {
+    width: 100vw;
+    z-index: 1;
+  }
+
+  .active {
+    width: 100vw;
+    z-index: 1;
+  }
+ */
+/* ///////// */
+
+body {
+  height: 100%;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.5rem;
+}
+
+.outer {
+  display: flex;
+  height: 10vh;
+  overflow: hidden;
+
+}
+
+.outer a{
+  font-size: 0.6rem;
+}
+
+.panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  width: 20%;
+  transition: all 0.5s ease;
+
+}
+.panel p {
+  transform: rotate(90deg);
+  transform-origin: 0;
+  transition: all 1s ease;
+  
+}
+
+aside img{
+  width: 25px;
+}
+
 }

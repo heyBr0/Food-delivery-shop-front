@@ -28,7 +28,31 @@
   color: red;
 }
 
-.profileContainer section{
+.profileContainer section {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+  .profileContainer section {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .profileContainer button {
+    width: 22%;
+  }
+  .profileContainer h1 {
+    margin-bottom: 3rem;
+    background-color: #34b183;
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+  }
+  .profileContainer p,
+  .profileContainer h2,
+  .profileContainer h3,
+  .profileContainer h4 {
+    font-size: 1rem;
+  }
+
 }

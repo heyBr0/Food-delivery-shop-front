@@ -22,6 +22,9 @@ import ProfilePic from "./styles/images/user32.png"
 import AdminPic from "./styles/images/admin32.png"
 
 function App() {
+
+
+
   const { cart, user } = useContext(MyContext);
 
   $(".panel").click(function () {
@@ -189,12 +192,11 @@ function App() {
                   to="/cart"
                   style={{
                     textDecoration: "none",
-                    color: "white",
-                    borderRight: "3px solid black",
-                    padding: "0.5rem",
+                    color: "white",                  
+             
                   }}
                 >
-                  Cart<img src={CartPic} alt="cartPic" /><sup>{cart.length}</sup>
+                  Cart<sup>{cart.length}</sup><br /><img src={CartPic} alt="cartPic" />
                 </Link>
               </aside>
 

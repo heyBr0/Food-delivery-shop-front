@@ -6,9 +6,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("./images/foodBackground10.png");
+  /* background-position: center;  */
+  background-repeat: repeat; 
+  background-size: cover; 
 }
 
 .loginContainer h1 {
+  padding: 1.5rem 0;
   margin-bottom: 3rem;
   background-color: #f5b700;
 }
@@ -18,4 +23,23 @@
   width: 30%;
   border: 2px solid #f5b700;
   padding: 2rem;
+}
+
+
+@media (max-width: 768px){
+  .loginContainer form {
+    text-align: center;
+    width: 90%;
+    border: 2px solid #f5b700;
+    padding: 2rem;
+  }
+  .loginContainer h1 {
+    margin-bottom: 3rem;
+    background-color: #f5b700;
+    padding: 1.5rem 0;
+    font-size: 1.5rem;
+  }
+  .loginContainer{
+    font-size: 1rem;
+  }
 }

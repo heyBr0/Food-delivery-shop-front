@@ -4,6 +4,14 @@
   margin: 0;
   padding-top: 5rem;
   min-height: 92vh;
+  background-image: url("./images/foodBackground10.png");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+.ordersContainer img {
+  border-radius: 15px;
 }
 
 #h1Orders {
@@ -20,16 +28,52 @@
 .ordersContainer ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-content: center;
 }
 
-/* #ordersItems {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-content: center;
-} */
+#ordersArticle{
+  outline: 1px solid #e83f6f;
+  margin: 10px;
+}
 
-/* #ordersGrid{
+#ordersItems {
   display: grid;
   grid-template-columns: 1fr 1fr;
-} */
+}
+
+#orderImages2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.ordersContainer h3,
+.ordersContainer h4 {
+  padding: 1rem;
+}
+
+#ordersItems h3,
+#ordersItems h4,
+#ordersItems div {
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+
+  #allOrders {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  #ordersArticle {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  #ordersItems {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .ordersContainer {
+    font-size: 1rem;
+  }
+}

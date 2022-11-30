@@ -10,8 +10,13 @@
   border: 2rem solid #92d1c3;
   margin: 0;
   min-height: 92vh;
+  background-image: url("./images/foodBackground10.png");
+  background-position: center; 
+  background-repeat: repeat; 
+  background-size: cover; 
 }
 .signupContainer h1 {
+  padding: 1.5rem 0;
   margin-bottom: 3rem;
   background-color: #92d1c3; 
 }
@@ -89,9 +94,28 @@ button:hover {
 }
 
 /* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
+/* @media screen and (max-width: 300px) {
   .cancelbtn,
   .signupbtn {
     width: 100%;
+  }
+} */
+
+
+@media (max-width: 768px){
+
+  .signupContainer form {
+    text-align: center;
+    width: 90%;
+    border: 2px solid #92d1c3;
+    padding: 2rem;
+  }
+  .signupContainer h1 {
+    margin-bottom: 3rem;
+    padding: 1.5rem 0;
+    background-color: #92d1c3; 
+  }
+  .signupContainer {
+    font-size: 1rem;
   }
 }

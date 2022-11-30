@@ -80,7 +80,7 @@ const Cart = () => {
         <div id="cartGrid">
           {cart.map((record) => {
             return (
-              <div key={record._id} className="card">
+              <div key={record._id} className="cardFinal">
                 <img src={record.img} alt="" width="300" />
                 <div className="container">
                   <h2>{record.title}</h2>
